@@ -4,9 +4,20 @@
 <div>   
   {{#each data}}
     {{#if this.devoured}}
-    <pre id="eaten">{{this.burger_name}}</pre>
+    <form action = "/delete/{{this.burger_name }}" method="post">
+    <pre class="eaten">{{this.burger_name}}</pre>
+    <button class="eaten" type="submit">Delete Da Burger</button>
+    </form>
     {{else}}
-    <pre id="noteaten">{{this.burger_name}}</pre>
+     <form action = "/eat/{{this.burger_name }}" method="post">
+    <pre class="noteaten">{{this.burger_name}}</pre>
+    <button class="noteaten" type="submit">Eat Da Burger</button>
+    </form>
   {{/if}}
   {{/each}}
+  <form action="/add" method="post">
+  <input name="burgertoadd" placeholder="Add a new burger by name"></input>
+  <button class="add" type="submit">Add Da Burger</button>
+  </form>
+  </div>
 </div>
