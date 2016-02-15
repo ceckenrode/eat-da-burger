@@ -1,0 +1,12 @@
+
+<h1 id="title">Burgers on the right have not been eaten. Burgers on the left are armed for eating.</h1>
+
+<div>   
+  {{#each data}}
+    {{#if this.devoured}}
+    <pre id="eaten">{{this.burger_name}}</pre>
+    {{else}}
+    <pre id="noteaten">{{this.burger_name}}</pre>
+  {{/if}}
+  {{/each}}
+</div>
