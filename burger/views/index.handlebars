@@ -1,7 +1,83 @@
 
-<h1 id="title">Burgers on the right have not been eaten. Burgers on the left are armed for eating.</h1>
 
-<div>   
+<div class="container">
+  <h1 id="title">Burgers on the right have not been eaten. Burgers on the left are armed for eating.</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group eaten">
+        {{#each data}}
+          {{#if this.devoured}}
+        <li class="list-group-item">
+          <form action = "/delete/{{this.burger_name }}" method="post">
+            <button class="eaten" type="submit">Delete {{this.burger_name}}
+            </button>
+          </form>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group noteaten">
+        {{#each data}}
+          {{#if this.devoured}}
+            {{else}}
+        <li class="list-group-item">
+          <form action = "/eat/{{this.burger_name }}" method="post">
+            <button class="noteaten" type="submit">Eat {{this.burger_name}}
+            </button>
+          </form>
+        </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group add">
+        <li class="list-group-item">
+          <form action="/add" method="post">
+            <input name="burgertoadd" placeholder="Add a new burger"> 
+            </input>
+            <button class="add" type="submit">Add Da Burger
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- <table>
+  <th>
+    <td>Eaten</td>
+    <td>Not Eaten</td>
+  </th>
+  {{#each data}}
+    {{#if this.devoured}}
+    <tr>
+    <td>
+    <form action = "/delete/{{this.burger_name }}" method="post">
+    <pre class="eaten">{{this.burger_name}}</pre>
+    <button class="eaten" type="submit">Delete Da Burger</button>
+    </form>
+    </td>
+    <td></td>
+    </tr>
+    {{else}}
+    <tr>
+    <td>
+    </td>
+    <td>
+    <form action = "/eat/{{this.burger_name }}" method="post">
+    <pre class="noteaten">{{this.burger_name}}</pre>
+    <button class="noteaten" type="submit">Eat Da Burger</button>
+    </form>
+    </td>
+  </tr>
+   {{/if}}
+  {{/each}}
+</table>
+ --><!-- <div>   
   {{#each data}}
     {{#if this.devoured}}
     <form action = "/delete/{{this.burger_name }}" method="post">
@@ -20,4 +96,4 @@
   <button class="add" type="submit">Add Da Burger</button>
   </form>
   </div>
-</div>
+</div> -->

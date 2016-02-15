@@ -1,15 +1,14 @@
 .eaten {
-  float: left;
   color: red;
-  font-size: 30pt;
+  font-size: 20pt;
 }
-
 .noteaten {
-  float: right;
   color: green;
-  font-size: 30pt;
+  font-size: 20pt;
 }
 
-#title {
-  text-align: center;
+.add {
+  color: blue;
+  font-size: 20pt;
 }
+
